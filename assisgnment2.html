@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let emp=[
+            {
+                ID:101,
+                name:"rajav",
+                salary:20000,
+                skills:["html","css","js"]
+            },
+            {
+                ID:102,
+                name:"ramu",
+                salary:20000,
+                skills:["python","c++","c"]
+            },
+            {
+                ID:103,
+                name:"somu",
+                salary:10000,
+                skills:["html","c++","js"],
+                company:{
+                    c1:"google",
+                    c2:"microsoft",
+                    c3:"amazon"
+                }
+            }
+        ];
+
+        console.log(emp[0].name);
+        console.log(emp[2].company.c1);
+        console.log(emp[2].skills[1]);
+        console.log(emp[0].skills);
+        console.log(emp);
+
+        let stringify_data=JSON.stringify(emp);
+        console.log(stringify_data);
+
+        let parsed_data=JSON.parse(stringify_data);
+        console.log(parsed_data)
+
+        let copied_data = [...emp];
+        copied_data[0].salary = "30000";
+        copied_data[1].skills.push("java");
+
+        let deep_copied_data = JSON.parse(JSON.stringify(emp));
+        deep_copied_data[0].salary = "40000";
+
+        console.log("Original Data:", emp);
+        console.log("Deep Copied Data:", deep_copied_data);
+
+
+    </script>
+</body>
+</html>
